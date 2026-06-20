@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
 
@@ -41,6 +42,7 @@ public class DuckDBMetricsAutoConfiguration {
     private static final Logger log = LoggerFactory.getLogger(DuckDBMetricsAutoConfiguration.class);
 
     @Bean
+    @ConditionalOnBean(MeterRegistry.class)
     public DuckDBMetricsConfigurer duckdbMetricsConfigurer(
             ObjectProvider<DataSource> dataSourceProvider,
             ObjectProvider<DuckDbReader> readerProvider,
