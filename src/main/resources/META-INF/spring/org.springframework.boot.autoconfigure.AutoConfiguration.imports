@@ -1,1 +1,2 @@
 io.github.mehrabr.duckdb.DuckDBAutoConfiguration
+io.github.mehrabr.duckdb.DuckDBMetricsAutoConfiguration
